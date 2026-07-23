@@ -489,56 +489,80 @@ a {
 }
 
 .experience__lead {
-  max-width: 38rem;
+  max-width: 42rem;
   margin-top: 2rem;
   color: var(--ink);
   font-size: clamp(1.25rem, 2vw, 1.55rem);
 }
 
-.experience__content > p:not([class]) {
-  max-width: 42rem;
-  margin: 1.3rem 0 0;
-  color: var(--ink-soft);
-  line-height: 1.7;
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--stone);
 }
 
-.experience-list {
-  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
-  padding: 0;
+.capability-grid article {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--stone);
+}
+
+.capability-grid article:nth-child(odd) {
+  padding-right: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.capability-grid article:nth-child(even) {
+  padding-left: clamp(1.5rem, 3vw, 2.5rem);
+  border-left: 1px solid var(--stone);
+}
+
+.capability-grid h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.capability-grid p {
+  margin: 0.7rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.experience-foundation {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.experience-foundation .section-label {
+  margin-bottom: 1rem;
+}
+
+.experience-facts {
+  margin: 0;
+  padding: 1.25rem 0;
   border-block: 1px solid var(--stone);
   list-style: none;
 }
 
-.experience-list li {
+.experience-facts li {
   display: grid;
-  grid-template-columns: 0.8rem 1fr;
-  gap: 0.8rem;
-  padding-block: 0.9rem;
-  border-top: 1px solid var(--stone);
-  font-size: 0.9rem;
-  font-weight: 620;
-  line-height: 1.5;
+  grid-template-columns: 0.7rem 1fr;
+  gap: 0.7rem;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  line-height: 1.55;
 }
 
-.experience-list li:first-child {
-  border-top: 0;
+.experience-facts li + li {
+  margin-top: 0.65rem;
 }
 
-.experience-list li::before {
-  width: 0.38rem;
-  height: 0.38rem;
-  margin-top: 0.48rem;
+.experience-facts li::before {
+  width: 0.32rem;
+  height: 0.32rem;
+  margin-top: 0.47rem;
   background: var(--forest);
   content: "";
-}
-
-.direct-note {
-  max-width: 42rem;
-  margin: 2.5rem 0 0;
-  padding-left: 1.5rem;
-  border-left: 3px solid var(--forest);
-  font-weight: 620;
-  line-height: 1.65;
 }
 
 .applied-proof {
@@ -1035,6 +1059,16 @@ a {
 
   .founder-portrait figcaption span {
     text-align: left;
+  }
+
+  .capability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .capability-grid article:nth-child(odd),
+  .capability-grid article:nth-child(even) {
+    padding-inline: 0;
+    border-left: 0;
   }
 
   .form-row,
